@@ -8,13 +8,13 @@ import playToastSound from '../mainComponents/ToastSound';
 import { MdOutlineDownloadForOffline } from "react-icons/md";
 
 const Test = () => {
-  const [name, setName] = useState('Yash Sugandhi');
+  const [name, setName] = useState('Student_Name');
   const [about, setAbout] = useState('has demonstrated exceptional commitment and excellence, earning this certificate as a testament to their commendable accomplishments in');
 
-  const [event, setEvent] = useState('Tabel Tennis');
+  const [event, setEvent] = useState('Sport_Name');
 
   
-  const [organization, setOrganization] = useState('SSGMCE');
+  const [organization, setOrganization] = useState('RMDSSOE');
   const certificateRef = useRef(null);
   const cardbg = useColorModeValue('#ffffff', '#ffffff');
   
