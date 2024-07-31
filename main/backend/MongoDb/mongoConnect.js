@@ -8,7 +8,7 @@ dotenv.config();
 const mongoConnect = async () => {
   try {
     // const uri = process.env.DB_URI; 
-     await mongoose.connect("mongodb+srv://sunny:123@cluster0.tvzdudb.mongodb.net/sample_mflix", {
+     await mongoose.connect("mongodb+srv://mesh:mesh2509@cluster0.xpqfrwz.mongodb.net/", {
       
     });
     console.log('Connected to MongoDB');
