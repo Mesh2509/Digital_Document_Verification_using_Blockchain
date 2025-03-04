@@ -1,36 +1,33 @@
-
 import { create } from "ipfs-http-client";
-/////////////////////////IPFS SERVER/////////////////////
-const IPFS_NODE_HOST = 'localhost';
+
+const IPFS_NODE_HOST = "localhost";
 const ipfs_port = 5001;
 
 let ipfs;
+
 // Function to initialize IPFS client
 async function initIPFSClient() {
-    try {
-        ipfs = create({
-            host: IPFS_NODE_HOST,
-            protocol: "http",
-            port: ipfs_port,
-        });
+  try {
+    console.log("Connecting to IPFS server...");
+    ipfs = create({
+      host: IPFS_NODE_HOST,
+      port: ipfs_port,
+      protocol: "http",
+      apiPath: "/api/v0",
+    });
+    console.log("IPFS client initialized.");
 
-        // Check IPFS connection status
-        const isOnline = await ipfs.isOnline();
-        if (isOnline) {
-            console.log("connected to IPFS");
-        } else {
-            console.log("IPFS client failed to connect");
-            // Handle connection failure here
-        }
-    } catch (error) {
-        if (error.code === "ECONNREFUSED") {
-            console.error("IPFS server is not running or accessible");
-            // Handle connection refusal error here
-        } else {
-            console.error("Error connecting to IPFS server:", error);
-            // Handle other connection errors here
-        }
+    // Check IPFS connection
+    const version = await ipfs.version();
+    console.log("Connected to IPFS version:", version.version);
+  } catch (error) {
+    if (error.code === "ECONNREFUSED") {
+      console.error("IPFS server is not running or accessible.");
+    } else {
+      console.error("Error connecting to IPFS server:", error);
     }
+    throw error;
+  }
 }
 
-export {ipfs,initIPFSClient}
+export { ipfs, initIPFSClient };
