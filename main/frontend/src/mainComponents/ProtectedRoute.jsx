@@ -37,13 +37,7 @@ const ProtectedRoute = ({ role, children }) => {
     };
 
 
-  if (!isLoggedIn(role)) {
-    return  <Navigate to="/AuthPage/login" />; // Redirect to login if not authenticated
-  } else if (!isValidAddress) {
-    return <InvalidAddres/>;
-  } else {
-    return children; // Render children if the user is authenticated and has a valid address
-  }
+  return children;
 };
 
 export default ProtectedRoute;

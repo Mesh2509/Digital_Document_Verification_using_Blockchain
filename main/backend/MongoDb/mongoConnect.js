@@ -8,7 +8,7 @@ const mongoConnect = async () => {
   try {
     // const uri = process.env.DB_URI;
     await mongoose.connect(
-      "mongodb+srv://mesh:mesh2509@cluster0.32kqs.mongodb.net/",
+      "mongodb+srv://mesh:mesh2509@cluster0.lmw8s.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
       {}
     );
     console.log("Connected to MongoDB");

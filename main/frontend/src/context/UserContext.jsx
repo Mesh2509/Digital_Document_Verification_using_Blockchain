@@ -31,7 +31,7 @@ export const UserProvider = ({ children }) => {
             userData: {
                 email:'owner@doqfy.com',
                 password:'123456',
-                address:'0xccbfcc2ea11f018328072a447bd9e66711283b73',
+                address:'0x00C1A6aAB9e10517d7B8D734c996a5c79cA3b832',
                 
             },
             isLoggedIn: true,

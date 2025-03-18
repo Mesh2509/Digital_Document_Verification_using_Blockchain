@@ -71,6 +71,7 @@ function OwnerPage() {
 
   // Function to handle dropdown selection
   const handleUniversityChange = (event) => {
+
     setSelectedUniversity(event.target.value);
   };
 
@@ -205,7 +206,7 @@ function OwnerPage() {
     try {
 
       // Call the smart contract function
-      const transaction = await contract.verifyUniversity(selectedUniversity, { from: account });
+      const transaction = await contract.verifyUniversity(selectedUniversity, { from: account, gasLimit:300000 });
       await transaction.wait();
       console.log('university verified successfully:', transaction.transactionHash);
       fetchUniversityAddresses();
